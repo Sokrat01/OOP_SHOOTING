@@ -8,7 +8,7 @@ class Shooter:
         self.experience = experience
 
     def show(self):
-        print("Name of shooter:", self.name, "age", self.age, "experience", self.experience)
+        print(f"Name of shooter {self.name}", f"age {self.age}", f"experience {self.experience}")
 
 
 class Beginner(Shooter):
@@ -17,7 +17,7 @@ class Beginner(Shooter):
         super().__init__(name, age, experience)
 
     def shoot(self):
-        print("1. Beginner: Result of shoot:", 0.01 * self.experience)
+        print(f"1. Beginner: Result of shoot:{0.01 * self.experience}:")
 
         if random.randint(1, 3) == 1:
             return True
@@ -31,7 +31,7 @@ class Middle(Shooter):
         super().__init__(name, age, experience)
 
     def shoot(self):
-        print("2. Middle: Result of shoot:", 0.05 * self.experience)
+        print(f"2. Middle: Result of shoot {0.05 * self.experience}")
 
         if random.randint(1, 3) == 2:
             return True
@@ -45,7 +45,7 @@ class Professional(Shooter):
         super().__init__(name, age, experience)
 
     def shoot(self):
-        print("3. Professional: Result of shoot:", 0.09 * self.experience)
+        print(f"3. Professional: Result of shoot{0.09 * self.experience}:")
 
         if random.randint(1, 3) == 3:
             return True
@@ -55,9 +55,9 @@ class Professional(Shooter):
 
 shooter = Shooter("Mika", 30, 5)
 shooter.show()
-beginner = Beginner(input("Name of beginner hunter\t"), int(input("age\t")), int(input("experience\t")))
+beginner = Beginner(input("Name of beginner hunter:\t"), int(input("age\t")), float(input("experience\t")))
 print(beginner.shoot())
-middle = Middle(input("Name of middle hunter\t"), int(input("age\t")), int(input("experience\t")))
+middle = Middle(input("Name of middle hunter:\t"), int(input("age\t")), float(input("experience\t")))
 print(middle.shoot())
-professional = Professional(input("Name of professional hunter\t"), int(input("age\t")), int(input("experience\t")))
+professional = Professional(input("Name of professional hunter:\t"), int(input("age\t")), float(input("experience\t")))
 print(professional.shoot())
